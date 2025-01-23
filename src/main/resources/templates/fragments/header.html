@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Header fragment</title>
+</head>
+<body>
+<header class="navbar navbar-inverse navbar-fixed-top" th:fragment="header">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Réservations</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li th:classappend="${module == 'home' ? 'active' : ''}">
+                    <a href="#" th:href="@{/}">Home</a>
+                </li>
+                <li th:classappend="${module == 'artists' ? 'active' : ''}">
+                    <a href="#" th:href="@{/artists}">Artists</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+</body>
+</html>
+src/main/ressource /templates/fragments/footer.html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Footer fragment</title>
+</head>
+<body>
+<footer th:fragment="footer">
+    &copy; 2024 – EPFC / ICC – Projet Réservations
+</footer>
+</body>
+</html>
