@@ -8,8 +8,7 @@
 <div class="container">
     <div layout:fragment="content">
         <h1 th:text="${title}">Liste des artistes</h1>
-        <
-        div class="actions">
+        <div class="actions">
             <a th:href="@{/artists/create}">Add new artist</a>
         </div>
 
@@ -28,6 +27,14 @@
                        th:href="@{/artists/{id}(id=${artist.id})}">Sull</a></td>
                         <td><a th:href="@{/artists/{id}(id=${artist.id})}">View</a></td>
                         <td><a th:href="@{/artists/{id}/edit(id=${artist.id})}">Edit</a></td>
+                        <td>
+                            <form th:id="|deleteForm-${artist.id}|"
+                                  th:action="@{/artists/{id}(id=${artist.id})}" th:method="delete">
+                                <a href="#" th:onclick="|if(confirm('Confirm delete artist #${artist.id}'))
+                                        document.getElementById('deleteForm-${artist.id}').submit();
+                                        return false;|">Delete</a>
+                            </form>
+                </td>
 
             </tr>
             </tbody>
