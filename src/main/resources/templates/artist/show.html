@@ -9,6 +9,9 @@
     <div layout:fragment="content">
         <h1 th:text="${artist.firstname} +' '+ ${artist.lastname}">Bob Sull</h1>
         <h1 th:text="|${artist.firstname}  ${artist.lastname}|">Bob Sull</h1>
+        <div class="actions">
+            <a th:href="@{/artists/{id}/edit(id=${artist.id})}">Edit</a>
+        </div>
 
         <nav><a th:href="@{/artists}">Retour à l'index</a></nav>
     </div>
