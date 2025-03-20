@@ -6,6 +6,8 @@
 </head>
 <body>
 <div class="container">
+    <!-- This section displays a reusable notification component -->
+    <div id="notificationSection" th:replace="~{TEMPLATES.MAIN_NOTIFICATION}"></div>
     <div layout:fragment="content">
         <h1 th:text="${title}">Liste des artistes</h1>
         <div class="actions">
